@@ -2,13 +2,14 @@ syntax enable           " 开启语法高亮
 set t_Co=256            " 开启256色显示
 set scrolloff=3         " 滚动时保持边距5行
 set number              " 开启行号显示
-set mouse=a             " 开启鼠标
+set mouse-=a            " 关闭鼠标
 set cmdheight=1
 set nocompatible
 set confirm 			" 在处理未保存或只读文件的时候，弹出确认
 set autoindent			" 自动缩进
 set tabstop=4			" Tab键的宽度
-set expandtab           " 展开tab为空格
+"set expandtab           " 展开tab为空格
+set noespandtab         " 缩进用tab制表符
 set softtabstop=4		" 统一缩进为4
 set shiftwidth=4
 filetype plugin indent on "打开文件类型检测, 加了这句才可以用智能补全
@@ -18,11 +19,11 @@ set laststatus=1        " 始终显示状态栏
 set encoding=utf-8      " 
 set ignorecase          " 搜索忽略大小写
 set nopaste             " 切换到正常模式
-set list lcs=tab:\¦\    " 显示对齐线 | ¦ ┆ │
+"set list lcs=tab:\¦\    " 显示对齐线 | ¦ ┆ │
 set backspace=indent,eol,start
 
-colorscheme Porsche
-"colorscheme space-vim-dark
+"colorscheme Porsche
+colorscheme space-vim-dark
 
 "set listchars=tab:\¦\ ,trail:.,extends:>,precedes:<,eol:$
 set listchars=tab:\¦\ ,trail:.,extends:>,precedes:<
@@ -58,7 +59,7 @@ set cursorline
 
 "========== for quick key =======
 " F11默认时全屏
-nmap <F2> :NERDTreeToggle<cr>
+"nmap <F2> :NERDTreeToggle<cr>
 nmap <F3> :TagbarToggle<CR>
 nmap <F4> :ToggleBufExplorer<cr>
 nmap <F5> :CtrlPFunky<cr>
@@ -92,19 +93,19 @@ noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
 "let g:NERDTree_title='NERD Tree'
 "let g:winManagerWindowLayout='NERDTree|TagList,Tarbar'
 
-autocmd vimenter * NERDTree
-nmap wm :NERDTreeToggle<cr>
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") ) | q | endif
+"autocmd vimenter * NERDTree
+"nmap wm :NERDTreeToggle<cr>
+"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") ) | q | endif
 
-function! NERDTree_Start()
-    exec 'NERDTree'
-endfunction
+"function! NERDTree_Start()
+"    exec 'NERDTree'
+"endfunction
 
-function! NERDTree_IsValid()
-    return 1
-endfunction
+"function! NERDTree_IsValid()
+"    return 1
+"endfunction
 
-nmap <silent> mt :if IsWinManagerVisible() <BAR> WMToggle<CR> <BAR> else <BAR> WMToggle<CR>:q<CR> endif "<CR>
+"nmap <silent> mt :if IsWinManagerVisible() <BAR> WMToggle<CR> <BAR> else <BAR> WMToggle<CR>:q<CR> endif "<CR>
 
 
 
@@ -229,7 +230,7 @@ let g:NERDTreeIndicatorMapCustom = {
 
 "=========== cscope ===============
 if has("cscope")
-    set csprg=/usr/local/bin/cscope
+"    set csprg=/usr/local/bin/cscope
     set csto=0
     set cst
     set nocsverb
