@@ -9,7 +9,7 @@ set confirm 			" 在处理未保存或只读文件的时候，弹出确认
 set autoindent			" 自动缩进
 set tabstop=4			" Tab键的宽度
 "set expandtab           " 展开tab为空格
-set noespandtab         " 缩进用tab制表符
+set noexpandtab         " 缩进用tab制表符
 set softtabstop=4		" 统一缩进为4
 set shiftwidth=4
 filetype plugin indent on "打开文件类型检测, 加了这句才可以用智能补全
